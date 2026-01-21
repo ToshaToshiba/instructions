@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Настройка macOS</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root { --bg-color: var(--tg-theme-bg-color, #1c1c1e); --text-color: var(--tg-theme-text-color, #ffffff); --hint-color: var(--tg-theme-hint-color, #9e9e9e); --link-color: var(--tg-theme-link-color, #34b7f1); --button-color: var(--tg-theme-button-color, #34b7f1); --button-text: var(--tg-theme-button-text-color, #ffffff); --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e); }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; }
+        .container { max-width: 600px; margin: 0 auto; padding-bottom: 40px; }
+        h1 { color: var(--link-color); margin-top: 0; }
+        .warning { background: rgba(255, 204, 0, 0.15); border-left: 4px solid #ffcc00; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; }
+        .step { background: var(--secondary-bg); padding: 15px; border-radius: 12px; margin-bottom: 15px; }
+        .step-title { font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: flex; align-items: center; }
+        .num { background: var(--button-color); color: var(--button-text); width: 24px; height: 24px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+        code { background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #ffcc00; }
+        b { color: var(--text-color); }
+        .btn-main { display: block; width: 100%; padding: 14px; margin-top: 30px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍎 macOS + V2Box</h1>
+
+        <div class="warning">
+            ⚠️ <b>Важно:</b> Выключите Cloudflare WARP и другие VPN.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">1</span> Установка</div>
+            Откройте App Store на Mac и установите <b>V2Box - V2ray Client</b>.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">2</span> Ключ</div>
+            Откройте бота на Mac, скопируйте ключ доступа из раздела <b>«Мой профиль»</b>.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">3</span> Добавление</div>
+            В V2Box нажмите <b>«Import from Clipboard»</b> (или кнопку +).
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">4</span> Активация</div>
+            1. Зайдите в меню <b>Configs</b>.<br>
+            2. Выделите добавленную конфигурацию (кликните, чтобы появилась галочка).<br>
+            3. На главном экране переключите ползунок в <b>ON</b>.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">5</span> Доступ</div>
+            Введите пароль от Mac или приложите палец к Touch ID для разрешения настроек сети.
+        </div>
+
+        <button class="btn-main" onclick="Telegram.WebApp.close()">Закрыть</button>
+    </div>
+    <script>Telegram.WebApp.ready(); Telegram.WebApp.expand();</script>
+</body>
+</html>

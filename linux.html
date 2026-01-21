@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Настройка Linux</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root { --bg-color: var(--tg-theme-bg-color, #1c1c1e); --text-color: var(--tg-theme-text-color, #ffffff); --link-color: var(--tg-theme-link-color, #34b7f1); --button-color: var(--tg-theme-button-color, #34b7f1); --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e); }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: monospace; margin: 0; padding: 20px; line-height: 1.5; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: var(--link-color); border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .cmd-block { background: #000; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #333; overflow-x: auto; color: #00ff00; }
+        .step { margin-bottom: 25px; }
+        .step strong { color: var(--link-color); font-size: 1.1em; }
+        .btn-main { display: block; width: 100%; padding: 14px; background-color: var(--button-color); color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐧 Linux CLI</h1>
+
+        <div class="step">
+            <strong>1. Установка (Debian/Ubuntu)</strong>
+            <div class="cmd-block">
+                wget https://github.com/hiddify/hiddify-next/releases/latest/download/hiddify-linux-x64.deb<br><br>
+                sudo dpkg -i hiddify-linux-x64.deb
+            </div>
+        </div>
+
+        <div class="step">
+            <strong>Альтернатива (Arch Linux)</strong>
+            <div class="cmd-block">
+                yay -S hiddify-next
+            </div>
+        </div>
+
+        <div class="step">
+            <strong>2. Запуск и Настройка</strong>
+            <p>1. Скопируйте ключ в боте.</p>
+            <p>2. Запустите программу командой:</p>
+            <div class="cmd-block">hiddify</div>
+            <p>3. Нажмите <b>Add Profile</b> → <b>From Clipboard</b>.</p>
+            <p>4. Настройте параметры сети (Region: Russia, DNS: 77.88.8.8) аналогично инструкции Windows.</p>
+            <p>5. Нажмите <b>Connect</b>.</p>
+        </div>
+
+        <button class="btn-main" onclick="Telegram.WebApp.close()">Закрыть терминал</button>
+    </div>
+    <script>Telegram.WebApp.ready(); Telegram.WebApp.expand();</script>
+</body>
+</html>
