@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- WATERMARK: Created by ToshaToshiba for @V_Network_Solutions_bot -->
+    <!-- DO NOT REMOVE: This content is protected -->
+    <!-- Copyright 2025 @V_Network_Solutions_bot -->
+    <meta name="creator" content="ToshaToshiba">
+    <meta name="service" content="@V_Network_Solutions_bot">
+    <meta name="protected-content" content="true">
     <title>Настройка Android</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
@@ -15,10 +21,36 @@
             --button-text: var(--tg-theme-button-text-color, #ffffff);
             --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e);
         }
-        body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; position: relative; }
+        
+        /* Видимый водяной знак */
+        body::before {
+            content: "© ToshaToshiba | @V_Network_Solutions_bot";
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(52, 183, 241, 0.2);
+            color: rgba(52, 183, 241, 0.6);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            border: 1px solid rgba(52, 183, 241, 0.3);
+            z-index: 9999;
+            font-weight: 600;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+        
         .container { max-width: 600px; margin: 0 auto; padding-bottom: 40px; }
         h1 { color: var(--link-color); margin-top: 0; }
         .warning { background: rgba(255, 204, 0, 0.15); border-left: 4px solid #ffcc00; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; }
+        .service-link { background: linear-gradient(135deg, rgba(52, 183, 241, 0.15) 0%, rgba(52, 183, 241, 0.05) 100%); border-left: 4px solid #34b7f1; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95em; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.3s ease; user-select: none; }
+        .service-link:hover { background: linear-gradient(135deg, rgba(52, 183, 241, 0.25) 0%, rgba(52, 183, 241, 0.15) 100%); border-left-color: #00a8e8; }
+        .service-link a { color: var(--link-color); text-decoration: none; font-weight: 600; flex-grow: 1; }
+        .service-link a:hover { text-decoration: underline; }
+        .service-icon { font-size: 1.3em; }
+        .service-text { display: flex; flex-direction: column; gap: 4px; }
         .step { background: var(--secondary-bg); padding: 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .step-title { font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: flex; align-items: center; }
         .num { background: var(--button-color); color: var(--button-text); width: 24px; height: 24px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
@@ -27,6 +59,25 @@
         li { margin-bottom: 8px; color: var(--hint-color); }
         b { color: var(--text-color); }
         .btn-main { display: block; width: 100%; padding: 14px; margin-top: 30px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+        
+        /* Защита от копирования */
+        .watermark-protected {
+            position: relative;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .watermark-protected::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +88,16 @@
             ⚠️ <b>Важно:</b> Выключите сторонние VPN и DPI приложения (ByeDPI, Zapret, 1.1.1.1) перед началом.
         </div>
 
+        <a href="https://t.me/V_Network_Solutions_bot" style="text-decoration: none;">
+            <div class="service-link">
+                <div class="service-icon">🤖</div>
+                <div class="service-text">
+                    <b style="color: var(--link-color);">Инструкция для сервиса @V_Network_Solutions_bot</b>
+                    <span style="font-size: 0.85em; color: var(--hint-color);">Нажмите, чтобы перейти в основного бота →</span>
+                </div>
+            </div>
+        </a>
+
         <div class="step">
             <div class="step-title"><span class="num">1</span> Установка</div>
             Скачайте приложение <b>Hiddify</b> из Google Play.
@@ -46,7 +107,7 @@
 
         <div class="step">
             <div class="step-title"><span class="num">2</span> Копирование ключа</div>
-            Вернитесь в бота, нажмите <b>«🖥 Мой профиль подключения»</b> и нажмите на длинную строку с ключом. Он скопируется.
+            Вернитесь в бота, нажмите <b>«🖥️ Мой профиль подключения»</b> и нажмите на длинную строку с ключом. Он скопируется.
         </div>
 
         <div class="step">
@@ -59,14 +120,14 @@
             Зайдите в <b>Настройки (⚙️)</b> → <b>Параметры конфигурации</b> и выставьте:
             <ul>
                 <li>📍 <b>Region:</b> Russia (Россия)</li>
-                <li>🔄 <b>Bypass LAN:</b> ВКЛ</li>
+                <li>📄 <b>Bypass LAN:</b> ВКЛ</li>
                 <li>🎯 <b>Resolve Destination:</b> ВКЛ</li>
                 <li>🌐 <b>Direct DNS:</b> впишите <code>77.88.8.8</code> или <code>local</code> </li>
                 <li>✅ <b>Enable DNS Routing:</b> ВКЛ</li>
                 <li>🔧 <b>Service Mode:</b> Не прокси</li>
                 <li>🔧 <b>Строгая маршрутизация</b> <code>off</code> </li>
                 <li>⚡ <b>TUN Implementation:</b> System</li>
-                <li>⚡ <b>TUN Implementation:</b> если скрость выгрузки низкая, то <code>gvisor</code> </li>
+                <li>⚡ <b>TUN Implementation:</b> если скорость выгрузки низкая, то <code>gvisor</code> </li>
             </ul>
         </div>
 
@@ -77,6 +138,55 @@
 
         <button class="btn-main" onclick="Telegram.WebApp.close()">Готово, закрыть</button>
     </div>
-    <script>Telegram.WebApp.ready(); Telegram.WebApp.expand();</script>
+    
+    <script>
+        // Защита от консоли и разработчика
+        if (window.devtools && window.devtools.open) {
+            console.clear();
+            window.location = "about:blank";
+        }
+        
+        // Водяной знак в консоли
+        console.log("%cWARNING: Protected Content", "color: red; font-size: 20px; font-weight: bold;");
+        console.log("%cThis content is protected by @V_Network_Solutions_bot", "color: #34b7f1; font-size: 14px;");
+        console.log("%cCreator: ToshaToshiba", "color: #4cd964; font-size: 12px;");
+        console.log("%cUnauthorized use or copying is prohibited", "color: #ff6b6b; font-size: 12px;");
+        
+        // Отключение правой кнопки мыши
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Отключение выделения и копирования
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.closest('.watermark-protected')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Отключение горячих клавиш (F12, Ctrl+Shift+I и т.д.)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+                (e.ctrlKey && e.key === 'u')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+        
+        // Динамический водяной знак - добавляется каждый раз при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const watermarkDiv = document.createElement('div');
+            watermarkDiv.style.cssText = 'position: fixed; bottom: 10px; right: 10px; z-index: 9999; background: rgba(52, 183, 241, 0.2); color: rgba(52, 183, 241, 0.6); padding: 8px 12px; border-radius: 6px; font-size: 11px; border: 1px solid rgba(52, 183, 241, 0.3); font-weight: 600; user-select: none; pointer-events: none; white-space: nowrap;';
+            watermarkDiv.textContent = '© ToshaToshiba | @V_Network_Solutions_bot';
+            document.body.appendChild(watermarkDiv);
+        });
+    </script>
 </body>
 </html>
