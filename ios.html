@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- WATERMARK: Created by ToshaToshiba for @V_Network_Solutions_bot -->
+    <!-- WATERMARK: Created by ToshaToshiba for @TechPoly_exit_bot -->
     <!-- DO NOT REMOVE: This content is protected -->
-    <!-- Copyright 2025 @V_Network_Solutions_bot -->
+    <!-- Copyright 2026 @TechPoly_exit_bot -->
     <meta name="creator" content="ToshaToshiba">
-    <meta name="service" content="@V_Network_Solutions_bot">
+    <meta name="service" content="@TechPoly_exit_bot">
     <meta name="protected-content" content="true">
-    <title>Настройка iOS</title>
+    <title>Настройка iPhone</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        :root { --bg-color: var(--tg-theme-bg-color, #1c1c1e); --text-color: var(--tg-theme-text-color, #ffffff); --hint-color: var(--tg-theme-hint-color, #9e9e9e); --link-color: var(--tg-theme-link-color, #34b7f1); --button-color: var(--tg-theme-button-color, #34b7f1); --button-text: var(--tg-theme-button-text-color, #ffffff); --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e); }
+        :root {
+            --bg-color: var(--tg-theme-bg-color, #1c1c1e);
+            --text-color: var(--tg-theme-text-color, #ffffff);
+            --hint-color: var(--tg-theme-hint-color, #9e9e9e);
+            --link-color: var(--tg-theme-link-color, #34b7f1);
+            --button-color: var(--tg-theme-button-color, #34b7f1);
+            --button-text: var(--tg-theme-button-text-color, #ffffff);
+            --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e);
+            /* Название сервиса — меняется в одном месте */
+            --wm-text: "© @TechPoly_exit_bot";
+        }
         body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; position: relative; }
-        
+
         /* Видимый водяной знак */
         body::before {
-            content: "© ToshaToshiba | @V_Network_Solutions_bot";
+            content: var(--wm-text);
             position: fixed;
             bottom: 10px;
             right: 10px;
@@ -33,125 +43,149 @@
             user-select: none;
             white-space: nowrap;
         }
-        
-        .container { max-width: 600px; margin: 0 auto; padding-bottom: 40px; }
+
+        .container { max-width: 600px; margin: 0 auto; padding-bottom: 60px; }
         h1 { color: var(--link-color); margin-top: 0; }
         .warning { background: rgba(255, 204, 0, 0.15); border-left: 4px solid #ffcc00; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; }
         .service-link { background: linear-gradient(135deg, rgba(52, 183, 241, 0.15) 0%, rgba(52, 183, 241, 0.05) 100%); border-left: 4px solid #34b7f1; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95em; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.3s ease; user-select: none; }
         .service-link:hover { background: linear-gradient(135deg, rgba(52, 183, 241, 0.25) 0%, rgba(52, 183, 241, 0.15) 100%); border-left-color: #00a8e8; }
         .service-link a { color: var(--link-color); text-decoration: none; font-weight: 600; flex-grow: 1; }
-        .service-link a:hover { text-decoration: underline; }
         .service-icon { font-size: 1.3em; }
         .service-text { display: flex; flex-direction: column; gap: 4px; }
-        .step { background: var(--secondary-bg); padding: 15px; border-radius: 12px; margin-bottom: 15px; }
+        .step { background: var(--secondary-bg); padding: 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .step-title { font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: flex; align-items: center; }
         .num { background: var(--button-color); color: var(--button-text); width: 24px; height: 24px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
         code { background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #ffcc00; border: 1px solid rgba(255,255,255,0.1); }
+        ul { margin: 5px 0 0 20px; padding: 0; }
+        li { margin-bottom: 8px; color: var(--hint-color); }
         b { color: var(--text-color); }
-        .btn-main { display: block; width: 100%; padding: 14px; margin-top: 30px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; }
         .settings-list { margin-top: 10px; font-size: 0.95em; color: var(--hint-color); }
         .settings-list li { margin-bottom: 8px; }
         .highlight { color: #ff6b6b; font-weight: bold; }
         .green-hl { color: #4cd964; font-weight: bold; }
+        .path { display: inline-block; background: rgba(52,183,241,0.12); border: 1px solid rgba(52,183,241,0.25); color: var(--link-color); padding: 1px 7px; border-radius: 5px; font-weight: 600; font-size: 0.93em; }
+        .why { margin-top: 10px; font-size: 0.88em; color: var(--hint-color); border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; }
+        .faq { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; margin-top: 25px; font-size: 0.9em; }
+        .btn-main { display: block; width: 100%; padding: 14px; margin-top: 25px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+
+        /* Защита от копирования */
+        .watermark-protected { position: relative; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+        .watermark-protected::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
     </style>
 </head>
-<body>
+<body class="watermark-protected">
     <div class="container">
-        <h1>🍎 iOS + V2Box</h1>
+        <h1>🍏 iPhone и iPad</h1>
 
         <div class="warning">
-            ⚠️ <b>Важно:</b> Выключите DNS Cloak, 1.1.1.1 и любые другие VPN перед началом.
+            ⚠️ <b>Перед началом:</b> выключите другие VPN, если они у вас были.
+            Два VPN одновременно работать не могут.
         </div>
 
-        <a href="https://t.me/V_Network_Solutions_bot" style="text-decoration: none;">
+        <a href="https://t.me/TechPoly_exit_bot" style="text-decoration: none;">
             <div class="service-link">
                 <div class="service-icon">🤖</div>
                 <div class="service-text">
-                    <b style="color: var(--link-color);">Инструкция для сервиса @V_Network_Solutions_bot</b>
-                    <span style="font-size: 0.85em; color: var(--hint-color);">Нажмите, чтобы перейти в основного бота →</span>
+                    <b style="color: var(--link-color);">Инструкция для сервиса @TechPoly_exit_bot</b>
+                    <span style="font-size: 0.85em; color: var(--hint-color);">Нажмите, чтобы вернуться в бота →</span>
                 </div>
             </div>
         </a>
 
         <div class="step">
-            <div class="step-title"><span class="num">1</span> Установка</div>
-            Скачайте <b>V2Box - V2ray Client</b> из App Store.
+            <div class="step-title"><span class="num">1</span> Скачайте приложение</div>
+            Откройте <b>App Store</b> и вбейте в поиск слово <b>Happ</b>.
             <br><br>
-            <a href="https://apps.apple.com/app/v2box-v2ray-client/id6446814690" target="_blank" style="color: var(--link-color);">🔗 Открыть App Store</a>
+            Скачайте приложение с таким названием. Подойдут также
+            <b>Happ ++</b> или <b>Streisand</b> — они работают одинаково.
+            <div class="why">
+                💡 Приложение бесплатное. Само по себе оно ничего не делает — это просто
+                «ключница», в которую мы сейчас вставим ваш ключ.
+            </div>
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">2</span> Ключ доступа</div>
-            В боте нажмите <b>«🖥️ Мой профиль подключения»</b> и тапните на ключ, чтобы скопировать его.
+            <div class="step-title"><span class="num">2</span> Скопируйте свой ключ</div>
+            Вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
+            <b>нажмите один раз на длинную строку с ключом</b>.
+            <br><br>
+            Ключ скопируется сам — выделять ничего не нужно.
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">3</span> Импорт</div>
-            Откройте V2Box. Он автоматически предложит добавить конфиг. <br>
-            Если нет – нажмите <b>«Import»</b> (или кнопку <b>+</b> → Import from Clipboard).
-        </div>
-
-        <div class="step">
-            <div class="step-title"><span class="num">4</span> Выбор сервера</div>
-            В разделе <b>Configs</b> найдите добавленную строку и <b>нажмите на неё</b>, чтобы появилась галочка (выбор активного сервера).
-        </div>
-
-        <div class="step" style="border: 1px solid var(--link-color);">
-            <div class="step-title"><span class="num">5</span> ⚙️ Стабильность (Важно!)</div>
-            Чтобы работал Телеграм и не было «вечной загрузки»:<br>
-            <ul class="settings-list">
-                <li>1. Внизу нажмите <b>Settings</b>.</li>
-                <li>2. <b>IPv6</b> <b>должен быть выключен или IPv4 Only</b>.</li>
-                <li>3. Вернитесь на <b>Home</b>, тапните на имя вашего сервера.</li>
-                <li>4. Найдите <b>Mux</b> и <span class="highlight">ВЫКЛЮЧИТЕ</span> его.</li>
-            </ul>
+            <div class="step-title"><span class="num">3</span> Добавьте ключ в приложение</div>
+            Откройте скачанное приложение. Сверху нажмите <b>плюсик</b> <code>+</code>.
+            <br><br>
+            В появившемся списке выберите
+            <b>«Импорт из буфера обмена»</b> (Import from clipboard).
+            <br><br>
+            На экране появится строка с вашим подключением — значит, ключ на месте.
         </div>
 
         <div class="step" style="border: 1px solid #ffcc00;">
-            <div class="step-title"><span class="num">6</span> 🇷🇺 Банки и Госуслуги</div>
-            Настройте это, чтобы ру сервисы работали без VPN:<br>
-            <ul class="settings-list">
-                <li>1. Внизу нажмите <b>Settings</b> → <b>Route</b>.</li>
-                <li>2. <b>Apple Direct</b> → <span class="green-hl">Включить</span>.</li>
-                <li>3. <b>Domain Strategy</b> → <code>IPIfNonMatch</code>.</li>
-                <li>4. Нажмите <b>Add Rule</b> (Добавить):
-                    <br>– Value: <code>geosite:ru</code>
-                    <br>– Type: <b>domain</b>
-                    <br>– Outbound: <b>direct</b>
-                </li>
-                <li>5. Добавьте второе правило:
-                    <br>– Value: <code>geoip:ru</code>
-                    <br>– Type: <b>ip</b> (или ipcidr)
-                    <br>– Outbound: <b>direct</b>
-                </li>
-            </ul>
+            <div class="step-title"><span class="num">4</span> 🇷🇺 Чтобы работали банки и Госуслуги</div>
+            Зайдите в <b>Настройки</b> (Settings) внизу экрана, найдите раздел
+            <b>Маршрутизация</b> (Routing) и выберите правило
+            <span class="green-hl">«Bypass RU»</span> — или похожее, где есть буквы <b>RU</b>.
+            <div class="why">
+                💡 Простыми словами: российские сайты пойдут напрямую, мимо VPN.
+                Поэтому банк и Госуслуги будут открываться как обычно.
+            </div>
+            <div class="warning" style="margin-top: 12px; margin-bottom: 0;">
+                📌 <b>Особенность iPhone:</b> он умеет пропускать мимо VPN только <b>сайты</b>,
+                но не отдельные приложения — так устроена сама система Apple.
+                На Android такая возможность есть.
+            </div>
         </div>
 
-        <div class="step">
-            <div class="step-title"><span class="num">7</span> Подключение</div>
-            На экране <b>Home</b> сдвиньте ползунок вправо. <br>
-            Нажмите <b>«Allow»</b> (Разрешить) и введите пароль/FaceID.
+        <div class="step" style="border: 1px solid var(--link-color);">
+            <div class="step-title"><span class="num">5</span> 🚀 Включите VPN</div>
+            Вернитесь на главный экран приложения и нажмите большую кнопку
+            <b>«Connect»</b> (Подключить).
+            <br><br>
+            При первом включении iPhone попросит разрешение на добавление
+            VPN-конфигурации — нажмите <span class="green-hl">«Разрешить»</span>
+            и введите код-пароль от телефона.
+            <br><br>
+            Вверху экрана появится значок <b>VPN</b> — всё работает!
+        </div>
+
+        <div class="faq">
+            🛟 <b>Не работает? Проверьте:</b>
+            <ul class="settings-list">
+                <li>Выключены ли другие VPN — в <b>Настройках iPhone → VPN</b>.</li>
+                <li>Точно ли скопировался ключ (шаг 2) — попробуйте ещё раз.</li>
+                <li>Не закончилась ли подписка — это видно в боте, в разделе «Мой профиль».</li>
+            </ul>
+            Если ничего не помогло — напишите нам в
+            <a href="https://t.me/TechPoly_exit_bot" style="color: var(--link-color);">бота</a>,
+            в раздел «💬 Поддержка». Поможем.
         </div>
 
         <button class="btn-main" onclick="Telegram.WebApp.close()">Готово, закрыть</button>
     </div>
-    
+
     <script>
         // Водяной знак в консоли
         console.log("%cWARNING: Protected Content", "color: red; font-size: 20px; font-weight: bold;");
-        console.log("%cThis content is protected by @V_Network_Solutions_bot", "color: #34b7f1; font-size: 14px;");
+        console.log("%cThis content is protected by @TechPoly_exit_bot", "color: #34b7f1; font-size: 14px;");
         console.log("%cCreator: ToshaToshiba", "color: #4cd964; font-size: 12px;");
         console.log("%cUnauthorized use or copying is prohibited", "color: #ff6b6b; font-size: 12px;");
-        
-        // Отключение правой кнопки мыши
+
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
-        
-        // Отключение горячих клавиш
+
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.closest('.watermark-protected')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || 
+            if (e.key === 'F12' ||
                 (e.ctrlKey && e.shiftKey && e.key === 'I') ||
                 (e.ctrlKey && e.shiftKey && e.key === 'C') ||
                 (e.ctrlKey && e.key === 'u')) {
@@ -159,7 +193,7 @@
                 return false;
             }
         });
-        
+
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
     </script>

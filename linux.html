@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- WATERMARK: Created by ToshaToshiba for @V_Network_Solutions_bot -->
+    <!-- WATERMARK: Created by ToshaToshiba for @TechPoly_exit_bot -->
     <!-- DO NOT REMOVE: This content is protected -->
-    <!-- Copyright 2025 @V_Network_Solutions_bot -->
+    <!-- Copyright 2026 @TechPoly_exit_bot -->
     <meta name="creator" content="ToshaToshiba">
-    <meta name="service" content="@V_Network_Solutions_bot">
+    <meta name="service" content="@TechPoly_exit_bot">
     <meta name="protected-content" content="true">
     <title>Настройка Linux</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        :root { --bg-color: var(--tg-theme-bg-color, #1c1c1e); --text-color: var(--tg-theme-text-color, #ffffff); --link-color: var(--tg-theme-link-color, #34b7f1); --button-color: var(--tg-theme-button-color, #34b7f1); --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e); }
-        body { background-color: var(--bg-color); color: var(--text-color); font-family: monospace; margin: 0; padding: 20px; line-height: 1.5; position: relative; }
-        
+        :root {
+            --bg-color: var(--tg-theme-bg-color, #1c1c1e);
+            --text-color: var(--tg-theme-text-color, #ffffff);
+            --hint-color: var(--tg-theme-hint-color, #9e9e9e);
+            --link-color: var(--tg-theme-link-color, #34b7f1);
+            --button-color: var(--tg-theme-button-color, #34b7f1);
+            --button-text: var(--tg-theme-button-text-color, #ffffff);
+            --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e);
+            /* Название сервиса — меняется в одном месте */
+            --wm-text: "© @TechPoly_exit_bot";
+        }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; position: relative; }
+
         /* Видимый водяной знак */
         body::before {
-            content: "© ToshaToshiba | @V_Network_Solutions_bot";
+            content: var(--wm-text);
             position: fixed;
             bottom: 10px;
             right: 10px;
@@ -33,79 +43,172 @@
             user-select: none;
             white-space: nowrap;
         }
-        
-        .container { max-width: 600px; margin: 0 auto; }
-        h1 { color: var(--link-color); border-bottom: 1px solid #444; padding-bottom: 10px; }
+
+        .container { max-width: 600px; margin: 0 auto; padding-bottom: 60px; }
+        h1 { color: var(--link-color); margin-top: 0; }
+        .warning { background: rgba(255, 204, 0, 0.15); border-left: 4px solid #ffcc00; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; }
         .service-link { background: linear-gradient(135deg, rgba(52, 183, 241, 0.15) 0%, rgba(52, 183, 241, 0.05) 100%); border-left: 4px solid #34b7f1; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95em; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.3s ease; user-select: none; }
         .service-link:hover { background: linear-gradient(135deg, rgba(52, 183, 241, 0.25) 0%, rgba(52, 183, 241, 0.15) 100%); border-left-color: #00a8e8; }
-        .service-link a { color: var(--link-color); text-decoration: none; font-weight: bold; flex-grow: 1; }
-        .service-link a:hover { text-decoration: underline; }
+        .service-link a { color: var(--link-color); text-decoration: none; font-weight: 600; flex-grow: 1; }
         .service-icon { font-size: 1.3em; }
         .service-text { display: flex; flex-direction: column; gap: 4px; }
-        .cmd-block { background: #000; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #333; overflow-x: auto; color: #00ff00; }
-        .step { margin-bottom: 25px; }
-        .step strong { color: var(--link-color); font-size: 1.1em; }
-        .btn-main { display: block; width: 100%; padding: 14px; background-color: var(--button-color); color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 30px; }
+        .step { background: var(--secondary-bg); padding: 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .step-title { font-weight: bold; font-size: 1.1em; margin-bottom: 8px; display: flex; align-items: center; }
+        .num { background: var(--button-color); color: var(--button-text); width: 24px; height: 24px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+        code { background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #ffcc00; border: 1px solid rgba(255,255,255,0.1); }
+        .cmd-block { background: #000; padding: 15px; border-radius: 8px; margin: 12px 0; border: 1px solid #333; overflow-x: auto; color: #00ff00; font-family: monospace; font-size: 0.9em; user-select: all; -webkit-user-select: all; white-space: nowrap; }
+        ul { margin: 5px 0 0 20px; padding: 0; }
+        li { margin-bottom: 8px; color: var(--hint-color); }
+        b { color: var(--text-color); }
+        .settings-list { margin-top: 10px; font-size: 0.95em; color: var(--hint-color); }
+        .settings-list li { margin-bottom: 8px; }
+        .green-hl { color: #4cd964; font-weight: bold; }
+        .path { display: inline-block; background: rgba(52,183,241,0.12); border: 1px solid rgba(52,183,241,0.25); color: var(--link-color); padding: 1px 7px; border-radius: 5px; font-weight: 600; font-size: 0.93em; }
+        .why { margin-top: 10px; font-size: 0.88em; color: var(--hint-color); border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; }
+        .faq { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; margin-top: 25px; font-size: 0.9em; }
+        .btn-main { display: block; width: 100%; padding: 14px; margin-top: 25px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+
+        /* Защита от копирования (команды в .cmd-block выделять можно) */
+        .watermark-protected { position: relative; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+        .watermark-protected::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
     </style>
 </head>
-<body>
+<body class="watermark-protected">
     <div class="container">
-        <h1>🧑 Linux CLI</h1>
+        <h1>🐧 Linux — NekoBox</h1>
 
-        <a href="https://t.me/V_Network_Solutions_bot" style="text-decoration: none;">
+        <div class="warning">
+            ⚠️ <b>Перед началом:</b> отключите другие VPN-клиенты.
+            Инструкция подходит для Ubuntu, Mint, Debian, Fedora и большинства
+            других систем.
+        </div>
+
+        <a href="https://t.me/TechPoly_exit_bot" style="text-decoration: none;">
             <div class="service-link">
                 <div class="service-icon">🤖</div>
                 <div class="service-text">
-                    <b style="color: var(--link-color);">Инструкция для сервиса @V_Network_Solutions_bot</b>
-                    <span style="font-size: 0.85em; color: #9e9e9e;">Нажмите, чтобы перейти в основного бота →</span>
+                    <b style="color: var(--link-color);">Инструкция для сервиса @TechPoly_exit_bot</b>
+                    <span style="font-size: 0.85em; color: var(--hint-color);">Нажмите, чтобы вернуться в бота →</span>
                 </div>
             </div>
         </a>
 
         <div class="step">
-            <strong>1. Установка (Debian/Ubuntu)</strong>
-            <div class="cmd-block">
-                wget https://github.com/hiddify/hiddify-next/releases/latest/download/hiddify-linux-x64.deb<br><br>
-                sudo dpkg -i hiddify-linux-x64.deb
+            <div class="step-title"><span class="num">1</span> Скачайте программу</div>
+            Откройте страницу загрузок NekoBox и скачайте файл, в названии которого
+            есть <b>AppImage</b>:
+            <br><br>
+            <a href="https://github.com/MatsuriDayo/nekoray/releases" target="_blank" style="color: var(--link-color);">🔗 Открыть страницу загрузок</a>
+            <div class="why">
+                💡 AppImage — это программа одним файлом. Её не нужно устанавливать:
+                скачали, разрешили запуск и пользуетесь.
             </div>
         </div>
 
         <div class="step">
-            <strong>Альтернатива (Arch Linux)</strong>
-            <div class="cmd-block">
-                yay -S hiddify-next
+            <div class="step-title"><span class="num">2</span> Разрешите запуск</div>
+            Откройте <b>Терминал</b> (обычно сочетание клавиш
+            <code>Ctrl</code> + <code>Alt</code> + <code>T</code>)
+            и выполните две команды — по очереди, нажимая Enter:
+            <div class="cmd-block">cd ~/Downloads</div>
+            <div class="cmd-block">chmod +x nekoray*.AppImage</div>
+            <div class="why">
+                💡 Первая команда переходит в папку «Загрузки», вторая разрешает
+                файлу запускаться. Если вы скачали файл в другую папку — укажите её вместо
+                <code>~/Downloads</code>.
             </div>
         </div>
 
         <div class="step">
-            <strong>2. Запуск и Настройка</strong>
-            <p>1. Скопируйте ключ в боте.</p>
-            <p>2. Запустите программу командой:</p>
-            <div class="cmd-block">hiddify</div>
-            <p>3. Нажмите <b>Add Profile</b> → <b>From Clipboard</b>.</p>
-            <p>4. Настройте параметры сети (Region: Russia, DNS: 77.88.8.8) аналогично инструкции Windows.</p>
-            <p>5. Нажмите <b>Connect</b>.</p>
+            <div class="step-title"><span class="num">3</span> Запустите программу</div>
+            Там же, в терминале, выполните:
+            <div class="cmd-block">./nekoray*.AppImage</div>
+            Откроется окно программы. Терминал в это время не закрывайте.
         </div>
 
-        <button class="btn-main" onclick="Telegram.WebApp.close()">Закрыть терминал</button>
+        <div class="step">
+            <div class="step-title"><span class="num">4</span> Добавьте ключ</div>
+            Вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
+            <b>нажмите на длинную строку с ключом</b> — он скопируется.
+            <br><br>
+            В программе сверху нажмите <b>«Профиль»</b> (Program) →
+            <b>«Импорт из буфера обмена»</b> (Add profile from clipboard).
+            <br><br>
+            В списке появится строка с вашим подключением.
+        </div>
+
+        <div class="step" style="border: 1px solid #ffcc00;">
+            <div class="step-title"><span class="num">5</span> 🇷🇺 Чтобы работали банки и Госуслуги</div>
+            Нажмите <b>«Настройки»</b> (Preferences) →
+            <b>«Настройки маршрутизации»</b> (Routing settings) и выберите
+            профиль обхода для России — <span class="green-hl">«Direct RU»</span>
+            или пункт, где есть буквы <b>RU</b>.
+            <div class="why">
+                💡 Простыми словами: российские сайты пойдут напрямую, мимо VPN.
+            </div>
+        </div>
+
+        <div class="step" style="border: 1px solid var(--link-color);">
+            <div class="step-title"><span class="num">6</span> 🚀 Включите VPN</div>
+            <ul class="settings-list">
+                <li>1. Сверху поставьте галочку <span class="green-hl">«Режим TUN»</span>
+                    (TUN Mode) — без неё VPN будет работать только в браузере.</li>
+                <li>2. Нажмите на своё подключение <b>правой кнопкой</b> →
+                    <b>«Запустить»</b> (Start).</li>
+                <li>3. Система запросит <b>пароль администратора</b> — это ваш обычный
+                    пароль от компьютера. Введите его.</li>
+            </ul>
+            <div class="why">
+                💡 Пароль нужен один раз за запуск: без прав администратора
+                программа не может создать сетевой туннель. При вводе пароля
+                в терминале символы не отображаются — это нормально, просто печатайте
+                и нажмите Enter.
+            </div>
+        </div>
+
+        <div class="faq">
+            🛟 <b>Не работает? Проверьте:</b>
+            <ul class="settings-list">
+                <li>Стоит ли галочка «Режим TUN» (шаг 6).</li>
+                <li>Правильно ли введён пароль администратора.</li>
+                <li>Если файл «не запускается» — вернитесь к шагу 2, команда
+                    <code>chmod +x</code> обязательна.</li>
+                <li>Не закончилась ли подписка — это видно в боте, в разделе «Мой профиль».</li>
+            </ul>
+            Если ничего не помогло — напишите нам в
+            <a href="https://t.me/TechPoly_exit_bot" style="color: var(--link-color);">бота</a>,
+            в раздел «💬 Поддержка». Поможем.
+        </div>
+
+        <button class="btn-main" onclick="Telegram.WebApp.close()">Готово, закрыть</button>
     </div>
-    
+
     <script>
         // Водяной знак в консоли
         console.log("%cWARNING: Protected Content", "color: red; font-size: 20px; font-weight: bold;");
-        console.log("%cThis content is protected by @V_Network_Solutions_bot", "color: #34b7f1; font-size: 14px;");
+        console.log("%cThis content is protected by @TechPoly_exit_bot", "color: #34b7f1; font-size: 14px;");
         console.log("%cCreator: ToshaToshiba", "color: #4cd964; font-size: 12px;");
         console.log("%cUnauthorized use or copying is prohibited", "color: #ff6b6b; font-size: 12px;");
-        
-        // Отключение правой кнопки мыши
+
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
-        
-        // Отключение горячих клавиш
+
+        // Выделение запрещено везде, КРОМЕ блоков с командами —
+        // их пользователь должен иметь возможность скопировать
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.closest('.cmd-block')) {
+                return true;
+            }
+            if (e.target.closest('.watermark-protected')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || 
+            if (e.key === 'F12' ||
                 (e.ctrlKey && e.shiftKey && e.key === 'I') ||
                 (e.ctrlKey && e.shiftKey && e.key === 'C') ||
                 (e.ctrlKey && e.key === 'u')) {
@@ -113,7 +216,7 @@
                 return false;
             }
         });
-        
+
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
     </script>

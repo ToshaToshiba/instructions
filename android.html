@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- WATERMARK: Created by ToshaToshiba for @V_Network_Solutions_bot -->
+    <!-- WATERMARK: Created by ToshaToshiba for @TechPoly_exit_bot -->
     <!-- DO NOT REMOVE: This content is protected -->
-    <!-- Copyright 2025 @V_Network_Solutions_bot -->
+    <!-- Copyright 2026 @TechPoly_exit_bot -->
     <meta name="creator" content="ToshaToshiba">
-    <meta name="service" content="@V_Network_Solutions_bot">
+    <meta name="service" content="@TechPoly_exit_bot">
     <meta name="protected-content" content="true">
     <title>Настройка Android</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -20,12 +20,14 @@
             --button-color: var(--tg-theme-button-color, #34b7f1);
             --button-text: var(--tg-theme-button-text-color, #ffffff);
             --secondary-bg: var(--tg-theme-secondary-bg-color, #2c2c2e);
+            /* Название сервиса — меняется в одном месте */
+            --wm-text: "© @TechPoly_exit_bot";
         }
         body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; line-height: 1.5; position: relative; }
-        
+
         /* Видимый водяной знак */
         body::before {
-            content: "© ToshaToshiba | @V_Network_Solutions_bot";
+            content: var(--wm-text);
             position: fixed;
             bottom: 10px;
             right: 10px;
@@ -41,14 +43,13 @@
             user-select: none;
             white-space: nowrap;
         }
-        
-        .container { max-width: 600px; margin: 0 auto; padding-bottom: 40px; }
+
+        .container { max-width: 600px; margin: 0 auto; padding-bottom: 60px; }
         h1 { color: var(--link-color); margin-top: 0; }
         .warning { background: rgba(255, 204, 0, 0.15); border-left: 4px solid #ffcc00; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.9em; }
         .service-link { background: linear-gradient(135deg, rgba(52, 183, 241, 0.15) 0%, rgba(52, 183, 241, 0.05) 100%); border-left: 4px solid #34b7f1; padding: 12px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95em; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.3s ease; user-select: none; }
         .service-link:hover { background: linear-gradient(135deg, rgba(52, 183, 241, 0.25) 0%, rgba(52, 183, 241, 0.15) 100%); border-left-color: #00a8e8; }
         .service-link a { color: var(--link-color); text-decoration: none; font-weight: 600; flex-grow: 1; }
-        .service-link a:hover { text-decoration: underline; }
         .service-icon { font-size: 1.3em; }
         .service-text { display: flex; flex-direction: column; gap: 4px; }
         .step { background: var(--secondary-bg); padding: 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
@@ -58,106 +59,155 @@
         ul { margin: 5px 0 0 20px; padding: 0; }
         li { margin-bottom: 8px; color: var(--hint-color); }
         b { color: var(--text-color); }
-        .btn-main { display: block; width: 100%; padding: 14px; margin-top: 30px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
-        
+        .settings-list { margin-top: 10px; font-size: 0.95em; color: var(--hint-color); }
+        .settings-list li { margin-bottom: 8px; }
+        .highlight { color: #ff6b6b; font-weight: bold; }
+        .green-hl { color: #4cd964; font-weight: bold; }
+        .path { display: inline-block; background: rgba(52,183,241,0.12); border: 1px solid rgba(52,183,241,0.25); color: var(--link-color); padding: 1px 7px; border-radius: 5px; font-weight: 600; font-size: 0.93em; }
+        .why { margin-top: 10px; font-size: 0.88em; color: var(--hint-color); border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; }
+        .faq { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; margin-top: 25px; font-size: 0.9em; }
+        .faq b { display: block; margin-top: 10px; }
+        .faq b:first-of-type { margin-top: 0; }
+        .btn-main { display: block; width: 100%; padding: 14px; margin-top: 25px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+
         /* Защита от копирования */
-        .watermark-protected {
-            position: relative;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        }
-        
-        .watermark-protected::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-        }
+        .watermark-protected { position: relative; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+        .watermark-protected::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
     </style>
 </head>
-<body>
+<body class="watermark-protected">
     <div class="container">
-        <h1>🤖 Android + Hiddify</h1>
+        <h1>🤖 Android — NekoBox</h1>
 
         <div class="warning">
-            ⚠️ <b>Важно:</b> Выключите сторонние VPN и DPI приложения (ByeDPI, Zapret, 1.1.1.1) перед началом.
+            ⚠️ <b>Перед началом:</b> выключите другие VPN и «обходчики» — ByeDPI, Zapret, 1.1.1.1.
+            Вместе они работать не будут.
         </div>
 
-        <a href="https://t.me/V_Network_Solutions_bot" style="text-decoration: none;">
+        <a href="https://t.me/TechPoly_exit_bot" style="text-decoration: none;">
             <div class="service-link">
                 <div class="service-icon">🤖</div>
                 <div class="service-text">
-                    <b style="color: var(--link-color);">Инструкция для сервиса @V_Network_Solutions_bot</b>
-                    <span style="font-size: 0.85em; color: var(--hint-color);">Нажмите, чтобы перейти в основного бота →</span>
+                    <b style="color: var(--link-color);">Инструкция для сервиса @TechPoly_exit_bot</b>
+                    <span style="font-size: 0.85em; color: var(--hint-color);">Нажмите, чтобы вернуться в бота →</span>
                 </div>
             </div>
         </a>
 
         <div class="step">
-            <div class="step-title"><span class="num">1</span> Установка</div>
-            Скачайте приложение <b>Hiddify</b> из Google Play.
-            <br><br>
-            <a href="https://play.google.com/store/apps/details?id=app.hiddify.com" target="_blank" style="color: var(--link-color);">🔗 Открыть Google Play</a>
-        </div>
-
-        <div class="step">
-            <div class="step-title"><span class="num">2</span> Копирование ключа</div>
-            Вернитесь в бота, нажмите <b>«🖥️ Мой профиль подключения»</b> и нажмите на длинную строку с ключом. Он скопируется.
-        </div>
-
-        <div class="step">
-            <div class="step-title"><span class="num">3</span> Активация</div>
-            Откройте Hiddify. Приложение предложит добавить ключ из буфера. Нажмите <b>«Добавить»</b>.
-        </div>
-
-        <div class="step">
-            <div class="step-title"><span class="num">4</span> Настройка (Важно!)</div>
-            Зайдите в <b>Настройки (⚙️)</b> → <b>Параметры конфигурации</b> и выставьте:
+            <div class="step-title"><span class="num">1</span> Установите приложение</div>
+            Бот прислал вам файл <b>nekobox.apk</b> прямо в чат. Нажмите на него — телефон
+            предложит установить программу.
             <ul>
-                <li>📍 <b>Region:</b> Russia (Россия)</li>
-                <li>📄 <b>Bypass LAN:</b> ВКЛ</li>
-                <li>🎯 <b>Resolve Destination:</b> ВКЛ</li>
-                <li>🌐 <b>Direct DNS:</b> впишите <code>77.88.8.8</code> или <code>local</code> </li>
-                <li>✅ <b>Enable DNS Routing:</b> ВКЛ</li>
-                <li>🔧 <b>Service Mode:</b> Не прокси</li>
-                <li>🔧 <b>Строгая маршрутизация</b> <code>off</code> </li>
-                <li>⚡ <b>TUN Implementation:</b> System</li>
-                <li>⚡ <b>TUN Implementation:</b> если скорость выгрузки низкая, то <code>gvisor</code> </li>
+                <li>Если появится надпись <b>«Установка заблокирована»</b> — нажмите
+                    <b>«Настройки»</b> и включите переключатель
+                    <b>«Разрешить установку из этого источника»</b>. Затем вернитесь назад
+                    и нажмите <b>«Установить»</b>.</li>
+                <li>Это нормально: так Android спрашивает про любые файлы не из Play Market.</li>
             </ul>
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">5</span> Запуск</div>
-            На главном экране нажмите большую круглую кнопку <b>«Подключить»</b>. При первом запуске разрешите создание VPN-соединения.
+            <div class="step-title"><span class="num">2</span> Скопируйте свой ключ</div>
+            Вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
+            <b>нажмите один раз на длинную строку с ключом</b>.
+            <br><br>
+            Всё, ключ уже скопирован — Telegram сделает это сам. Ничего выделять не нужно.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">3</span> Добавьте ключ в NekoBox</div>
+            Откройте <b>NekoBox</b>. Сверху справа найдите значок
+            <b>папки с плюсом</b> (📁➕) и нажмите на него.
+            <br><br>
+            В появившемся списке выберите
+            <b>«Импорт из буфера обмена»</b>.
+            <br><br>
+            В приложении появится строка с названием вашего подключения — значит, всё получилось.
+        </div>
+
+        <div class="step" style="border: 1px solid #ffcc00;">
+            <div class="step-title"><span class="num">4</span> 🇷🇺 Чтобы работали банки и Госуслуги</div>
+            Это <b>самый важный шаг</b>. Без него Сбербанк, Госуслуги, Озон и игры
+            могут не открываться.
+            <ul class="settings-list">
+                <li>1. Нажмите <b>три полоски</b> (☰) слева сверху — это меню.</li>
+                <li>2. Выберите <b>«Настройки маршрутизации»</b>.</li>
+                <li>3. Включите <span class="green-hl">«Обход LAN и РФ»</span>.</li>
+            </ul>
+            <div class="why">
+                💡 Простыми словами: вы говорите приложению «российские сайты пускай напрямую,
+                без VPN». Поэтому банк видит, что вы дома, и не блокирует вход.
+            </div>
+        </div>
+
+        <div class="step" style="border: 1px solid #ffcc00;">
+            <div class="step-title"><span class="num">5</span> 📱 Выберите свои приложения</div>
+            Там же, в <b>«Настройках маршрутизации»</b>, найдите пункт
+            <b>«Пользовательские правила (Приложения)»</b>.
+            <br><br>
+            Откроется список программ на вашем телефоне. Поставьте
+            <span class="green-hl">галочки</span> напротив тех, которым VPN не нужен:
+            <ul class="settings-list">
+                <li>🏦 банки — Сбербанк, Тинькофф, Альфа;</li>
+                <li>🏛 Госуслуги, налоговая;</li>
+                <li>🚕 такси, навигаторы, доставка;</li>
+                <li>🎮 игры — так пинг будет ниже.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">6</span> ⚡ Настройка скорости</div>
+            Вернитесь в меню (☰) и откройте <b>«Настройки TUN»</b>. Выставьте два значения:
+            <ul class="settings-list">
+                <li><b>Реализация TUN</b> → <code>gvisor</code></li>
+                <li><b>MTU</b> → <code>1500</code></li>
+            </ul>
+            <div class="why">
+                💡 Эти два пункта отвечают за скорость и стабильность. Просто выберите
+                их из списка — вводить ничего не нужно.
+            </div>
+        </div>
+
+        <div class="step" style="border: 1px solid var(--link-color);">
+            <div class="step-title"><span class="num">7</span> 🚀 Включите VPN</div>
+            Вернитесь на главный экран приложения. <b>Нажмите на строку с вашим
+            подключением</b>, чтобы она стала выделенной.
+            <br><br>
+            Теперь нажмите большую <b>розовую кнопку запуска</b> внизу экрана.
+            <br><br>
+            При первом включении Android спросит разрешение — нажмите
+            <span class="green-hl">«ОК»</span>. Сверху появится значок ключика 🔑 — VPN работает!
+        </div>
+
+        <div class="faq">
+            🛟 <b>Не работает? Проверьте:</b>
+            <ul class="settings-list">
+                <li>Выключены ли другие VPN и ByeDPI/Zapret.</li>
+                <li>Выделено ли подключение на главном экране (шаг 7).</li>
+                <li>Не закончилась ли подписка — это видно в боте, в разделе «Мой профиль».</li>
+            </ul>
+            Если ничего не помогло — напишите нам в
+            <a href="https://t.me/TechPoly_exit_bot" style="color: var(--link-color);">бота</a>,
+            в раздел «💬 Поддержка». Поможем.
         </div>
 
         <button class="btn-main" onclick="Telegram.WebApp.close()">Готово, закрыть</button>
     </div>
-    
+
     <script>
-        // Защита от консоли и разработчика
-        if (window.devtools && window.devtools.open) {
-            console.clear();
-            window.location = "about:blank";
-        }
-        
         // Водяной знак в консоли
         console.log("%cWARNING: Protected Content", "color: red; font-size: 20px; font-weight: bold;");
-        console.log("%cThis content is protected by @V_Network_Solutions_bot", "color: #34b7f1; font-size: 14px;");
+        console.log("%cThis content is protected by @TechPoly_exit_bot", "color: #34b7f1; font-size: 14px;");
         console.log("%cCreator: ToshaToshiba", "color: #4cd964; font-size: 12px;");
         console.log("%cUnauthorized use or copying is prohibited", "color: #ff6b6b; font-size: 12px;");
-        
+
         // Отключение правой кнопки мыши
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
-        
+
         // Отключение выделения и копирования
         document.addEventListener('selectstart', function(e) {
             if (e.target.closest('.watermark-protected')) {
@@ -165,10 +215,10 @@
                 return false;
             }
         });
-        
+
         // Отключение горячих клавиш (F12, Ctrl+Shift+I и т.д.)
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || 
+            if (e.key === 'F12' ||
                 (e.ctrlKey && e.shiftKey && e.key === 'I') ||
                 (e.ctrlKey && e.shiftKey && e.key === 'C') ||
                 (e.ctrlKey && e.key === 'u')) {
@@ -176,17 +226,9 @@
                 return false;
             }
         });
-        
+
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
-        
-        // Динамический водяной знак - добавляется каждый раз при загрузке
-        document.addEventListener('DOMContentLoaded', function() {
-            const watermarkDiv = document.createElement('div');
-            watermarkDiv.style.cssText = 'position: fixed; bottom: 10px; right: 10px; z-index: 9999; background: rgba(52, 183, 241, 0.2); color: rgba(52, 183, 241, 0.6); padding: 8px 12px; border-radius: 6px; font-size: 11px; border: 1px solid rgba(52, 183, 241, 0.3); font-weight: 600; user-select: none; pointer-events: none; white-space: nowrap;';
-            watermarkDiv.textContent = '© ToshaToshiba | @V_Network_Solutions_bot';
-            document.body.appendChild(watermarkDiv);
-        });
     </script>
 </body>
 </html>
