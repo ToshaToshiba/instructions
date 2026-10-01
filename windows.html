@@ -66,20 +66,24 @@
         .path { display: inline-block; background: rgba(52,183,241,0.12); border: 1px solid rgba(52,183,241,0.25); color: var(--link-color); padding: 1px 7px; border-radius: 5px; font-weight: 600; font-size: 0.93em; }
         .why { margin-top: 10px; font-size: 0.88em; color: var(--hint-color); border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; }
         .faq { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; margin-top: 25px; font-size: 0.9em; }
+        .faq > b { display: block; margin-top: 10px; }
+        .faq > b:first-of-type { margin-top: 0; }
         .btn-main { display: block; width: 100%; padding: 14px; margin-top: 25px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
 
         /* Защита от копирования */
         .watermark-protected { position: relative; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
         .watermark-protected::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+        .alt { margin-top: 10px; font-size: 0.9em; color: var(--hint-color); }
+        h2 { color: var(--link-color); margin: 30px 0 12px; font-size: 1.25em; }
     </style>
 </head>
 <body class="watermark-protected">
     <div class="container">
-        <h1>🪟 Windows — NekoBox</h1>
+        <h1>🪟 Windows — OshaVPN</h1>
 
         <div class="warning">
-            ⚠️ <b>Перед началом:</b> выключите другие VPN и «обходчики» — ByeDPI, Zapret,
-            Warp, 1.1.1.1. Вместе они работать не будут.
+            ⚠️ <b>Перед началом:</b> выключите другие VPN и «обходчики» (Zapret, GoodbyeDPI, WARP).
+            NekoBox и похожие программы OshaVPN при запуске выключит сам.
         </div>
 
         <a href="https://t.me/TechPoly_exit_bot" style="text-decoration: none;">
@@ -93,72 +97,99 @@
         </a>
 
         <div class="step">
-            <div class="step-title"><span class="num">1</span> Распакуйте архив</div>
-            Бот прислал вам архив <b>nekobox-windows.zip</b>. Скачайте его на компьютер.
+            <div class="step-title"><span class="num">1</span> Скачайте и распакуйте</div>
+            В боте нажмите <span class="path">📥 Скачать VPN клиент</span> →
+            <span class="path">🪟 Windows 10/11</span> → <b>«⬇️ Скачать OshaVPN для Windows»</b>.
             <br><br>
-            Нажмите на файл <b>правой кнопкой мыши</b> → <b>«Извлечь всё...»</b> →
-            <b>«Извлечь»</b>. Появится папка с программой.
+            Нажмите на скачанный архив <b>правой кнопкой</b> → <b>«Извлечь всё»</b> →
+            <b>«Извлечь»</b>. Запускать прямо из архива не нужно.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">2</span> Запустите и установите</div>
+            В распакованной папке запустите <code>OshaVPN.exe</code>.
+            <ul class="settings-list">
+                <li>Windows спросит <b>«Разрешить этому приложению вносить изменения?»</b> —
+                    нажмите <b>«Да»</b>. Права администратора нужны, чтобы VPN работал для всего компьютера.</li>
+                <li>Если появится синее окно <b>«Система Windows защитила ваш компьютер»</b> — нажмите
+                    <b>«Подробнее»</b> → <b>«Выполнить в любом случае»</b>. Так бывает с новыми программами.</li>
+                <li>На вопрос <b>«Установить OshaVPN на этот компьютер?»</b> ответьте <b>«Да»</b>:
+                    программа появится в «Пуске» и на рабочем столе, а скачанную папку можно удалить.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">3</span> Скопируйте ссылку подписки</div>
+            Вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
+            <b>нажмите один раз на строку под «🔗 Ссылка на подписку»</b> — она начинается с
+            <code>https://</code>. Telegram скопирует её сам.
             <div class="why">
-                💡 Важно именно распаковать, а не запускать программу прямо из архива —
-                иначе она не сможет сохранять настройки.
+                💡 Нужна именно ссылка на подписку, а не «запасной» ключ <code>vless://</code> ниже:
+                ключ OshaVPN не примет. Ссылку достаточно добавить один раз — дальше
+                приложение само узнаёт о новых серверах.
             </div>
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">2</span> Запустите программу</div>
-            Зайдите в распакованную папку и найдите файл <code>nekobox.exe</code>.
-            <br><br>
-            Нажмите на него <b>правой кнопкой</b> → <b>«Запуск от имени администратора»</b> →
-            <b>«Да»</b>.
-            <div class="why">
-                💡 Права администратора нужны, чтобы программа могла создать
-                VPN-подключение. Без них VPN не включится.
-            </div>
-        </div>
-
-        <div class="step">
-            <div class="step-title"><span class="num">3</span> Добавьте ключ</div>
-            Сначала вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
-            <b>нажмите на длинную строку с ключом</b> — он скопируется.
-            <br><br>
-            Теперь в программе сверху нажмите <b>«Профиль»</b> →
-            <b>«Импорт из буфера обмена»</b>.
-            <br><br>
-            В списке появится строка с вашим подключением.
-        </div>
-
-        <div class="step" style="border: 1px solid #ffcc00;">
-            <div class="step-title"><span class="num">4</span> 🇷🇺 Чтобы работали банки и Госуслуги</div>
-            В программе сверху нажмите <b>«Настройки»</b> →
-            <b>«Настройки маршрутизации»</b>.
-            <br><br>
-            Выберите базовый профиль обхода для России —
-            <span class="green-hl">«Direct RU»</span> (или пункт, где есть буквы <b>RU</b>).
-            <div class="why">
-                💡 Простыми словами: российские сайты пойдут напрямую, мимо VPN.
-                Поэтому онлайн-банк и Госуслуги будут работать как обычно.
+            <div class="step-title"><span class="num">4</span> Добавьте подписку</div>
+            В OshaVPN на экране <b>«Добавьте подписку»</b> нажмите <b>«Вставить»</b>, затем
+            <b>«Сохранить»</b>.
+            <div class="alt">
+                Позже новую подписку можно добавить на вкладке <span class="path">Подписки</span>.
+                Там же кнопка <b>«QR-код»</b> — покажет подписку, чтобы перенести её на телефон.
             </div>
         </div>
 
         <div class="step" style="border: 1px solid var(--link-color);">
             <div class="step-title"><span class="num">5</span> 🚀 Включите VPN</div>
+            Нажмите большую кнопку <b>«Подключить»</b>. Надпись сверху сменится на
+            <span class="green-hl">«Защищено»</span> — VPN работает для всего компьютера.
+            <br><br>
+            Крестик в углу окна не выключает VPN — программа прячется к часам (в трей). Выключить
+            можно кнопкой «Отключить» или правой кнопкой по значку в трее → «Выход».
+        </div>
+
+        <div class="step" style="border: 1px solid #ffcc00;">
+            <div class="step-title"><span class="num">✓</span> 🇷🇺 Банки и Госуслуги — уже настроено</div>
+            По умолчанию включён режим <span class="green-hl">«Россия напрямую»</span>: Госуслуги,
+            банки и российские сайты идут мимо VPN. Настраивать ничего не нужно — программа
+            сама запускается вместе с Windows и сама обновляется.
             <ul class="settings-list">
-                <li>1. Сверху в программе поставьте галочку
-                    <span class="green-hl">«Режим TUN»</span>. Это обязательно —
-                    иначе VPN будет работать только в браузере.</li>
-                <li>2. Нажмите на своё подключение <b>правой кнопкой мыши</b> →
-                    <b>«Запустить»</b>.</li>
+                <li>Плохо работает конкретный сайт или игра — карточка <b>«Сервисы»</b> на главном экране.</li>
+                <li>Включена <b>«Защита от утечек»</b>: если VPN оборвался, интернет не пойдёт мимо него.
+                    В отеле или кафе, где нужно войти в Wi-Fi через страницу, нажмите
+                    <b>«Пустить на минуту»</b>.</li>
+                <li>Справка внутри программы — ссылка <b>«Как пользоваться»</b> под кнопкой.</li>
             </ul>
-            Строка подключения подсветится — значит, VPN включён.
+        </div>
+
+        <h2 id="win7">🖥 Windows 7</h2>
+
+        <div class="step">
+            <div class="step-title"><span class="num">1</span> Отдельная сборка</div>
+            Для Windows 7 в боте есть своя кнопка: <span class="path">📥 Скачать VPN клиент</span> →
+            <span class="path">🖥 Windows 7</span>. Распакуйте архив и запустите программу —
+            права администратора не нужны, она установится только для вашего пользователя.
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">2</span> Чем отличается</div>
+            Подписка добавляется так же: <b>«Вставить»</b> → <b>«Сохранить»</b> → большая кнопка.
+            <ul class="settings-list">
+                <li>По умолчанию через VPN идут браузеры и программы, которые слушают системный прокси.</li>
+                <li>Чтобы через VPN шли <b>все</b> программы (игры, мессенджеры), включите
+                    <b>«Все программы через VPN (TUN)»</b> — программа перезапустится и попросит права администратора.</li>
+            </ul>
         </div>
 
         <div class="faq">
             🛟 <b>Не работает? Проверьте:</b>
             <ul class="settings-list">
-                <li>Запущена ли программа от имени администратора (шаг 2).</li>
-                <li>Стоит ли галочка «Режим TUN» (шаг 5).</li>
-                <li>Не блокирует ли антивирус — иногда он ругается на VPN-программы,
-                    нужно добавить папку в исключения.</li>
+                <li>Нажмите <b>«Не работает? Проверить»</b> под кнопкой — программа сама найдёт причину
+                    и подскажет, что сделать. Там же кнопка <b>«Отправить разработчику»</b>.</li>
+                <li>Пропал интернет при выключенном VPN — это «Защита от утечек»: нажмите
+                    <b>«Выпустить интернет»</b> на главном экране.</li>
+                <li>Добавлена ли именно ссылка на подписку (<code>https://…</code>), а не ключ.</li>
                 <li>Не закончилась ли подписка — это видно в боте, в разделе «Мой профиль».</li>
             </ul>
             Если ничего не помогло — напишите нам в
@@ -176,11 +207,13 @@
         console.log("%cCreator: ToshaToshiba", "color: #4cd964; font-size: 12px;");
         console.log("%cUnauthorized use or copying is prohibited", "color: #ff6b6b; font-size: 12px;");
 
+        // Отключение правой кнопки мыши
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
 
+        // Отключение выделения и копирования
         document.addEventListener('selectstart', function(e) {
             if (e.target.closest('.watermark-protected')) {
                 e.preventDefault();
@@ -188,6 +221,7 @@
             }
         });
 
+        // Отключение горячих клавиш (F12, Ctrl+Shift+I и т.д.)
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' ||
                 (e.ctrlKey && e.shiftKey && e.key === 'I') ||

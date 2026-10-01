@@ -9,7 +9,7 @@
     <meta name="creator" content="ToshaToshiba">
     <meta name="service" content="@TechPoly_exit_bot">
     <meta name="protected-content" content="true">
-    <title>Настройка iPhone</title>
+    <title>Настройка iPhone и iPad</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
@@ -66,20 +66,25 @@
         .path { display: inline-block; background: rgba(52,183,241,0.12); border: 1px solid rgba(52,183,241,0.25); color: var(--link-color); padding: 1px 7px; border-radius: 5px; font-weight: 600; font-size: 0.93em; }
         .why { margin-top: 10px; font-size: 0.88em; color: var(--hint-color); border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; }
         .faq { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; margin-top: 25px; font-size: 0.9em; }
+        .faq > b { display: block; margin-top: 10px; }
+        .faq > b:first-of-type { margin-top: 0; }
         .btn-main { display: block; width: 100%; padding: 14px; margin-top: 25px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
 
         /* Защита от копирования */
         .watermark-protected { position: relative; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
         .watermark-protected::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+        .alt { margin-top: 10px; font-size: 0.9em; color: var(--hint-color); }
+        h2 { color: var(--link-color); margin: 30px 0 12px; font-size: 1.25em; }
     </style>
 </head>
 <body class="watermark-protected">
     <div class="container">
-        <h1>🍏 iPhone и iPad</h1>
+        <h1>🍏 iPhone и iPad — OneXray</h1>
 
         <div class="warning">
-            ⚠️ <b>Перед началом:</b> выключите другие VPN, если они у вас были.
-            Два VPN одновременно работать не могут.
+            ⚠️ Своего приложения OshaVPN для iPhone пока нет — оно в работе. Сейчас подписка
+            работает в бесплатном <b>OneXray</b>. Happ, v2RayTun и Streisand из российского
+            App Store убраны: под их названиями там лежат чужие копии — <b>не ставьте их</b>.
         </div>
 
         <a href="https://t.me/TechPoly_exit_bot" style="text-decoration: none;">
@@ -93,68 +98,40 @@
         </a>
 
         <div class="step">
-            <div class="step-title"><span class="num">1</span> Скачайте приложение</div>
-            Откройте <b>App Store</b> и вбейте в поиск слово <b>Happ</b>.
-            <br><br>
-            Скачайте приложение с таким названием. Подойдут также
-            <b>Happ ++</b> или <b>Streisand</b> — они работают одинаково.
-            <div class="why">
-                💡 Приложение бесплатное. Само по себе оно ничего не делает — это просто
-                «ключница», в которую мы сейчас вставим ваш ключ.
-            </div>
+            <div class="step-title"><span class="num">1</span> Установите OneXray</div>
+            Откройте <b>App Store</b>, найдите <b>OneXray</b> и установите приложение. Оно бесплатное.
+            <div class="alt">Запасной вариант, если OneXray не найдётся, — <b>incy</b>, шаги те же.</div>
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">2</span> Скопируйте свой ключ</div>
+            <div class="step-title"><span class="num">2</span> Скопируйте ссылку подписки</div>
             Вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
-            <b>нажмите один раз на длинную строку с ключом</b>.
-            <br><br>
-            Ключ скопируется сам — выделять ничего не нужно.
+            <b>нажмите один раз на строку под «🔗 Ссылка на подписку»</b> — она начинается с
+            <code>https://</code>. Telegram скопирует её сам.
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">3</span> Добавьте ключ в приложение</div>
-            Откройте скачанное приложение. Сверху нажмите <b>плюсик</b> <code>+</code>.
+            <div class="step-title"><span class="num">3</span> Добавьте подписку в OneXray</div>
+            Откройте <b>OneXray</b>, нажмите <b>«+»</b> и выберите добавление подписки
+            из буфера обмена (или вставьте ссылку в поле подписки и сохраните).
             <br><br>
-            В появившемся списке выберите
-            <b>«Импорт из буфера обмена»</b> (Import from clipboard).
-            <br><br>
-            На экране появится строка с вашим подключением — значит, ключ на месте.
-        </div>
-
-        <div class="step" style="border: 1px solid #ffcc00;">
-            <div class="step-title"><span class="num">4</span> 🇷🇺 Чтобы работали банки и Госуслуги</div>
-            Зайдите в <b>Настройки</b> (Settings) внизу экрана, найдите раздел
-            <b>Маршрутизация</b> (Routing) и выберите правило
-            <span class="green-hl">«Bypass RU»</span> — или похожее, где есть буквы <b>RU</b>.
-            <div class="why">
-                💡 Простыми словами: российские сайты пойдут напрямую, мимо VPN.
-                Поэтому банк и Госуслуги будут открываться как обычно.
-            </div>
-            <div class="warning" style="margin-top: 12px; margin-bottom: 0;">
-                📌 <b>Особенность iPhone:</b> он умеет пропускать мимо VPN только <b>сайты</b>,
-                но не отдельные приложения — так устроена сама система Apple.
-                На Android такая возможность есть.
-            </div>
+            Появится список серверов — значит, всё получилось.
         </div>
 
         <div class="step" style="border: 1px solid var(--link-color);">
-            <div class="step-title"><span class="num">5</span> 🚀 Включите VPN</div>
-            Вернитесь на главный экран приложения и нажмите большую кнопку
-            <b>«Connect»</b> (Подключить).
+            <div class="step-title"><span class="num">4</span> 🚀 Включите VPN</div>
+            Включите VPN переключателем в OneXray. При первом включении iPhone спросит
+            разрешение добавить конфигурацию VPN — нажмите <span class="green-hl">«Разрешить»</span>
+            и подтвердите код-паролем или Face ID.
             <br><br>
-            При первом включении iPhone попросит разрешение на добавление
-            VPN-конфигурации — нажмите <span class="green-hl">«Разрешить»</span>
-            и введите код-пароль от телефона.
-            <br><br>
-            Вверху экрана появится значок <b>VPN</b> — всё работает!
+            Вверху экрана появится значок <b>VPN</b> — всё работает.
         </div>
 
         <div class="faq">
             🛟 <b>Не работает? Проверьте:</b>
             <ul class="settings-list">
-                <li>Выключены ли другие VPN — в <b>Настройках iPhone → VPN</b>.</li>
-                <li>Точно ли скопировался ключ (шаг 2) — попробуйте ещё раз.</li>
+                <li>Выключены ли другие VPN-приложения.</li>
+                <li>Добавлена ли именно ссылка на подписку (<code>https://…</code>).</li>
                 <li>Не закончилась ли подписка — это видно в боте, в разделе «Мой профиль».</li>
             </ul>
             Если ничего не помогло — напишите нам в
@@ -172,11 +149,13 @@
         console.log("%cCreator: ToshaToshiba", "color: #4cd964; font-size: 12px;");
         console.log("%cUnauthorized use or copying is prohibited", "color: #ff6b6b; font-size: 12px;");
 
+        // Отключение правой кнопки мыши
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
         });
 
+        // Отключение выделения и копирования
         document.addEventListener('selectstart', function(e) {
             if (e.target.closest('.watermark-protected')) {
                 e.preventDefault();
@@ -184,6 +163,7 @@
             }
         });
 
+        // Отключение горячих клавиш (F12, Ctrl+Shift+I и т.д.)
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12' ||
                 (e.ctrlKey && e.shiftKey && e.key === 'I') ||

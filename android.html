@@ -66,22 +66,24 @@
         .path { display: inline-block; background: rgba(52,183,241,0.12); border: 1px solid rgba(52,183,241,0.25); color: var(--link-color); padding: 1px 7px; border-radius: 5px; font-weight: 600; font-size: 0.93em; }
         .why { margin-top: 10px; font-size: 0.88em; color: var(--hint-color); border-top: 1px dashed rgba(255,255,255,0.12); padding-top: 8px; }
         .faq { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 15px; margin-top: 25px; font-size: 0.9em; }
-        .faq b { display: block; margin-top: 10px; }
-        .faq b:first-of-type { margin-top: 0; }
+        .faq > b { display: block; margin-top: 10px; }
+        .faq > b:first-of-type { margin-top: 0; }
         .btn-main { display: block; width: 100%; padding: 14px; margin-top: 25px; background-color: var(--button-color); color: var(--button-text); border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
 
         /* Защита от копирования */
         .watermark-protected { position: relative; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
         .watermark-protected::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+        .alt { margin-top: 10px; font-size: 0.9em; color: var(--hint-color); }
+        h2 { color: var(--link-color); margin: 30px 0 12px; font-size: 1.25em; }
     </style>
 </head>
 <body class="watermark-protected">
     <div class="container">
-        <h1>🤖 Android — NekoBox</h1>
+        <h1>🤖 Android — OshaVPN</h1>
 
         <div class="warning">
-            ⚠️ <b>Перед началом:</b> выключите другие VPN и «обходчики» — ByeDPI, Zapret, 1.1.1.1.
-            Вместе они работать не будут.
+            ⚠️ <b>Перед началом:</b> выключите другие VPN и «обходчики» — NekoBox, v2rayNG,
+            ByeDPI, Zapret, 1.1.1.1. Вместе они работать не будут.
         </div>
 
         <a href="https://t.me/TechPoly_exit_bot" style="text-decoration: none;">
@@ -95,96 +97,96 @@
         </a>
 
         <div class="step">
-            <div class="step-title"><span class="num">1</span> Установите приложение</div>
-            Бот прислал вам файл <b>nekobox.apk</b> прямо в чат. Нажмите на него — телефон
-            предложит установить программу.
+            <div class="step-title"><span class="num">1</span> Установите OshaVPN</div>
+            В боте нажмите <span class="path">📥 Скачать VPN клиент</span> →
+            <span class="path">🤖 Android</span> → <b>«⬇️ Скачать OshaVPN для Android»</b>.
+            Когда файл скачается, откройте его — телефон предложит установить программу.
             <ul>
                 <li>Если появится надпись <b>«Установка заблокирована»</b> — нажмите
-                    <b>«Настройки»</b> и включите переключатель
-                    <b>«Разрешить установку из этого источника»</b>. Затем вернитесь назад
-                    и нажмите <b>«Установить»</b>.</li>
-                <li>Это нормально: так Android спрашивает про любые файлы не из Play Market.</li>
+                    <b>«Настройки»</b> и включите <b>«Разрешить установку из этого источника»</b>,
+                    затем вернитесь и нажмите <b>«Установить»</b>.</li>
+                <li>Это нормально: так Android спрашивает про любые приложения не из Play Маркета.</li>
             </ul>
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">2</span> Скопируйте свой ключ</div>
+            <div class="step-title"><span class="num">2</span> Скопируйте ссылку подписки</div>
             Вернитесь в бота, откройте <span class="path">👤 Мой профиль</span> и
-            <b>нажмите один раз на длинную строку с ключом</b>.
-            <br><br>
-            Всё, ключ уже скопирован — Telegram сделает это сам. Ничего выделять не нужно.
-        </div>
-
-        <div class="step">
-            <div class="step-title"><span class="num">3</span> Добавьте ключ в NekoBox</div>
-            Откройте <b>NekoBox</b>. Сверху справа найдите значок
-            <b>папки с плюсом</b> (📁➕) и нажмите на него.
-            <br><br>
-            В появившемся списке выберите
-            <b>«Импорт из буфера обмена»</b>.
-            <br><br>
-            В приложении появится строка с названием вашего подключения — значит, всё получилось.
-        </div>
-
-        <div class="step" style="border: 1px solid #ffcc00;">
-            <div class="step-title"><span class="num">4</span> 🇷🇺 Чтобы работали банки и Госуслуги</div>
-            Это <b>самый важный шаг</b>. Без него Сбербанк, Госуслуги, Озон и игры
-            могут не открываться.
-            <ul class="settings-list">
-                <li>1. Нажмите <b>три полоски</b> (☰) слева сверху — это меню.</li>
-                <li>2. Выберите <b>«Настройки маршрутизации»</b>.</li>
-                <li>3. Включите <span class="green-hl">«Обход LAN и РФ»</span>.</li>
-            </ul>
+            <b>нажмите один раз на строку под «🔗 Ссылка на подписку»</b> — она начинается с
+            <code>https://</code>. Telegram скопирует её сам.
             <div class="why">
-                💡 Простыми словами: вы говорите приложению «российские сайты пускай напрямую,
-                без VPN». Поэтому банк видит, что вы дома, и не блокирует вход.
+                💡 Нужна именно ссылка на подписку, а не «запасной» ключ <code>vless://</code> ниже:
+                ключ OshaVPN не примет. Ссылку достаточно добавить один раз — дальше
+                приложение само узнаёт о новых серверах.
             </div>
         </div>
 
-        <div class="step" style="border: 1px solid #ffcc00;">
-            <div class="step-title"><span class="num">5</span> 📱 Выберите свои приложения</div>
-            Там же, в <b>«Настройках маршрутизации»</b>, найдите пункт
-            <b>«Пользовательские правила (Приложения)»</b>.
-            <br><br>
-            Откроется список программ на вашем телефоне. Поставьте
-            <span class="green-hl">галочки</span> напротив тех, которым VPN не нужен:
-            <ul class="settings-list">
-                <li>🏦 банки — Сбербанк, Тинькофф, Альфа;</li>
-                <li>🏛 Госуслуги, налоговая;</li>
-                <li>🚕 такси, навигаторы, доставка;</li>
-                <li>🎮 игры — так пинг будет ниже.</li>
-            </ul>
+        <div class="step">
+            <div class="step-title"><span class="num">3</span> Добавьте подписку</div>
+            Откройте <b>OshaVPN</b>. На экране <b>«Добавьте подписку»</b> нажмите
+            <b>«Вставить»</b>, а затем <b>«Сохранить»</b>.
+            <div class="alt">
+                Подписка уже добавлена раньше? Новую можно добавить на вкладке
+                <span class="path">Подписки</span> → «Добавить подписку». Если ссылка открыта
+                на компьютере, нажмите <b>«QR-код»</b> и наведите камеру на код.
+            </div>
         </div>
 
         <div class="step">
-            <div class="step-title"><span class="num">6</span> ⚡ Настройка скорости</div>
-            Вернитесь в меню (☰) и откройте <b>«Настройки TUN»</b>. Выставьте два значения:
+            <div class="step-title"><span class="num">4</span> Дайте разрешения</div>
+            Откроется экран <b>«Почти готово»</b>. Нажмите <b>«Разрешить»</b> у каждого пункта:
             <ul class="settings-list">
-                <li><b>Реализация TUN</b> → <code>gvisor</code></li>
-                <li><b>MTU</b> → <code>1500</code></li>
+                <li><b>Подключение VPN</b> — без него VPN не включится;</li>
+                <li><b>Уведомления</b> — значок, что VPN работает;</li>
+                <li><b>Работа в фоне</b> — чтобы телефон не выключал VPN, когда гаснет экран;</li>
+                <li><b>Установка обновлений</b> — чтобы приложение обновлялось само.</li>
             </ul>
+            Когда всё отмечено «готово», нажмите <b>«Готово»</b>.
             <div class="why">
-                💡 Эти два пункта отвечают за скорость и стабильность. Просто выберите
-                их из списка — вводить ничего не нужно.
+                💡 Пропустили что-то — не страшно: разрешения можно дать позже в
+                <span class="path">Настройки</span> → «Разрешения».
             </div>
         </div>
 
         <div class="step" style="border: 1px solid var(--link-color);">
-            <div class="step-title"><span class="num">7</span> 🚀 Включите VPN</div>
-            Вернитесь на главный экран приложения. <b>Нажмите на строку с вашим
-            подключением</b>, чтобы она стала выделенной.
+            <div class="step-title"><span class="num">5</span> 🚀 Включите VPN</div>
+            Нажмите <b>большую круглую кнопку</b> на главном экране. Надпись сверху сменится на
+            <span class="green-hl">«Защищено»</span> — VPN работает.
             <br><br>
-            Теперь нажмите большую <b>розовую кнопку запуска</b> внизу экрана.
-            <br><br>
-            При первом включении Android спросит разрешение — нажмите
-            <span class="green-hl">«ОК»</span>. Сверху появится значок ключика 🔑 — VPN работает!
+            Сервер приложение выбирает само и при сбое переключается на другой без вашего участия.
+        </div>
+
+        <div class="step" style="border: 1px solid #ffcc00;">
+            <div class="step-title"><span class="num">✓</span> 🇷🇺 Банки и Госуслуги — уже настроено</div>
+            По умолчанию включён режим <span class="green-hl">«Россия напрямую»</span>: Госуслуги,
+            банки и российские сайты идут мимо VPN. Ничего настраивать не нужно.
+            <ul class="settings-list">
+                <li>Если какое-то приложение (например, банк) всё равно капризничает —
+                    <span class="path">Настройки</span> → «Маршрутизация» →
+                    <b>«Приложения мимо VPN»</b> → «Выбрать» и отметьте его.</li>
+                <li>Плохо работает конкретный сайт или игра — там же раздел <b>«Сервисы»</b>.</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-title"><span class="num">💡</span> Полезно знать</div>
+            <ul class="settings-list">
+                <li><b>Обновления ставятся сами</b> — раз в час приложение проверяет новую версию
+                    и ставит её, когда погаснет экран. Первое обновление Android может попросить подтвердить.</li>
+                <li>На Samsung обновлению может мешать <b>«Автоматическая защита»</b> — приложение
+                    само подскажет, где её выключить.</li>
+                <li>Подробная справка внутри приложения: <span class="path">Настройки</span> →
+                    <b>«Как пользоваться»</b>.</li>
+            </ul>
         </div>
 
         <div class="faq">
             🛟 <b>Не работает? Проверьте:</b>
             <ul class="settings-list">
+                <li>Под кнопкой нажмите <b>«Не работает? Проверить»</b> — приложение само найдёт
+                    причину и подскажет, что сделать. Там же кнопка <b>«Отправить разработчику»</b>.</li>
                 <li>Выключены ли другие VPN и ByeDPI/Zapret.</li>
-                <li>Выделено ли подключение на главном экране (шаг 7).</li>
+                <li>Добавлена ли именно ссылка на подписку (<code>https://…</code>), а не ключ.</li>
                 <li>Не закончилась ли подписка — это видно в боте, в разделе «Мой профиль».</li>
             </ul>
             Если ничего не помогло — напишите нам в
